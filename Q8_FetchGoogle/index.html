@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Google</title>
+    <script>
+    async function fetchGooglePage() {
+      try {
+        const response = await fetch("/fetch-google");
+        const data = await response.text(); // Fetching the text (HTML content) from the response
+        document.getElementById("output").innerText = data; // Displaying the HTML content in the div
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+  </script>
+  </head>
+  <body>
+    <h1>Fetch Google Page</h1>
+    <button id="fetchBtn" onclick="fetchGooglePage()">Fetch Google</button>
+    <div id="content"></div>
+    <div id="output" style="white-space: pre-wrap; margin-top: 20px;"></div>
+
+    <script>
+      document.getElementById("fetchBtn").addEventListener("click", function() {
+        document.getElementById("content").innerHTML = `
+          <p>Google cannot be displayed due to security reasons. <a href="https://www.google.com" target="_blank">Visit Google</a>.</p>
+        `;
+      });
+    </script>
+  </body>
+</html>

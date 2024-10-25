@@ -1,0 +1,26 @@
+{
+  "name": "705_assignment1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon main.js",
+    "build": "echo 'Building project...'",
+    "clean": "rm -rf ./dist",
+    "create-db": "node createDb.js",
+    "insert-records": "node insertRecords.js",
+    "fetch-records": "node fetchRecords.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "node-fetch": "^2.7.0",
+    "node-static": "^0.7.11"
+  }
+}
